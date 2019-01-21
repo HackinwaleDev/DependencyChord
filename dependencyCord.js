@@ -128,12 +128,24 @@ function drawChart(){
 
             // Set up the group for holding the components and pass in the data
             let group = svg.append('g')
+                        .attr('class', 'arc-group')
                         .attr('transform', 'translate('+ svgWidth/2 + ',' +svgHeight/2+ ')')
                         .selectAll('g')
                         .data(chords.groups)
                       .enter().append('g')
                       .on('mouseover', fade(0.1))
                       .on('mouseout', fade(0.7))
+            // Give title to each half
+            group.append('text')
+                        .attr('transform', 'translate(-250,-220)')
+                        .style('fill', 'gray')
+                        .style('font-size', '20px')
+                        .text(data.headers[1]);
+            group.append('text')
+                        .attr('transform', 'translate(200,-220)')
+                        .style('fill', 'gray')
+                        .style('font-size', '20px')
+                        .text(data.headers[0]);
             // Create path for the arcs
             group.append('path')
                         .attr('fill', function(d){ logger(d.index); return data.arcNames[d.index] === ""? 'none': color(d.index)})
