@@ -1,5 +1,8 @@
 /**This is the implementationn of dependency chord for Marirs */
 
+//call to perform magik
+chordDataProcessor();
+
 // SECTION A:: PREPARATION OF THE DATA READY FOR THE CHART
 function chordDataProcessor(){
     
@@ -8,31 +11,31 @@ function chordDataProcessor(){
         let headers = []
         let arcNames = []
         let matrix = [
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,1,5,1,5,1,5,1,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,1,5,1,5,1,5,1,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,1,5,1,5,1,5,1,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,1,5,1,5,1,5,1,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,1,5,1,5,1,5,1,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,1,5,1,5,1,5,1,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,1,5,1,5,1,5,1,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,1,5,1,5,1,5,1,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,1,5,1,5,1,5,1,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,1,5,1,5,1,5,1,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,1,5,1,5,1,5,1,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,1,5,1,5,1,5,1,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,1,5,1,5,1,5,1,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,1,5,1,5,1,5,1,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,1,5,1,5,1,5,1,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40], //dummy
-            [5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,0,0,0,0,0,0,0,0,0,0],
-            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0],
-            [5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,0,0,0,0,0,0,0,0,0,0],
-            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0],
-            [5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,0,0,0,0,0,0,0,0,0,0],
-            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0],
-            [5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,0,0,0,0,0,0,0,0,0,0],
-            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,0,0,0,0,0,0,0,0,0]
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,15,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,45,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,45,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,15,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,45,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,45,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,45,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,100],       //dummy
+            [20,0,0,0,0,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],      //Nancy
+            [0,10,10,0,0,10,0,0,0,10,10,0,0,0,10,0,0,0,0,0,0,0,0,0,0],  //Joe
+            [0,0,0,15,0,0,0,0,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],      //Ram
+            [0,0,0,0,45,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],     //Tjessie       
+            [0,0,0,0,0,0,0,45,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],     //Kiran
+            [0,0,0,0,0,0,0,0,0,0,0,45,0,0,0,0,0,0,0,0,0,0,0,0,0,0],     //Vsrie
+            [0,0,0,0,0,0,0,0,0,0,0,0,45,0,0,0,0,0,0,0,0,0,0,0,0],       //Wterng1
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,45,0,0,0,0,0,0,0,0,0,0,0],       //Kzday
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,100,0,0,0,0,0,0,0,0,0]        //dummy
 
         ];
 
@@ -66,8 +69,6 @@ function chordDataProcessor(){
 
     })
 }
-//call for testing
-chordDataProcessor()
 
 // SECTION B:: DRAWING THE CHART
 function drawChart(){
@@ -94,8 +95,10 @@ function drawChart(){
                         .attr('height', svgHeight)
 
             // common property
-            let outerRadius = Math.min(svgWidth, svgHeight) * .5
-            let innerRadius = outerRadius - 50
+            let outerRadius = Math.min(svgWidth, svgHeight) * .5;
+            let innerRadius = outerRadius - 50;
+            let totalArcLength = 365;
+            let offset = Math.PI * (100 / (totalArcLength+100)) / 2;
             logger(outerRadius)
             logger(innerRadius)
             // logger(data.headers)
@@ -110,20 +113,15 @@ function drawChart(){
             arc = d3.arc()
                         .innerRadius(innerRadius)
                         .outerRadius(innerRadius + 10)
+                        .startAngle(startAngle)
+                        .endAngle(endAngle)
             // ribbon function
             ribbon = d3.ribbon()
                         .radius(innerRadius)
+                        .startAngle(startAngle)
+                        .endAngle(endAngle)
             // color function
             color = d3.scaleOrdinal(d3.schemeCategory10)
-            // fade function
-            function fade(opacity) {
-                return function(d, i) {
-                  svg.selectAll("path.chord")
-                      .filter(function(d) { return d.source.index !== i && d.target.index !== i && data.arcNames[d.source.index] !== ""; })
-                      .transition()
-                      .style("opacity", opacity);
-                };
-              }// end fade
 
             // Instantiate the chords 
             const chords = chord(data.matrix)
@@ -143,7 +141,7 @@ function drawChart(){
                         .attr('d', arc)
             // Set the name for each arc
             group.append("text")
-                        .each(function(d) { return d.angle = (d.startAngle + d.endAngle) / 2; })
+                        .each(function(d) { return d.angle = ((d.startAngle + d.endAngle) / 2) + offset; })
                         .attr("dy", ".35em")
                         .attr("transform", function(d){ return `
                             rotate(${(d.angle * 180 / Math.PI - 90)})
@@ -164,6 +162,28 @@ function drawChart(){
                         // .attr("stroke", function(d) {return  d3.rgb(color(d.source.index)).darker()})
                         .attr("fill", function(d) {return data.arcNames[d.source.index] === ""? 'none': color(d.source.index)})
                         .attr("d", ribbon);
+
+                        
+            /** Define other useful function here */
+            // fade function
+            function fade(opacity) {
+                return function(d, i) {
+                  svg.selectAll("path.chord")
+                      .filter(function(d) { return d.source.index !== i && d.target.index !== i && data.arcNames[d.source.index] !== ""; })
+                      .transition()
+                      .style("opacity", opacity);
+                };
+            }// end fade
+
+            // startAngle function
+            function startAngle(d){
+                return d.startAngle + offset;
+            }// end startAngle
+
+            // endAngle function
+            function endAngle(d){
+                return d.endAngle + offset;
+            }// end endAngle
 
         }// end chartEngine
 
